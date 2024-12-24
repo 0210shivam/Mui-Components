@@ -6,15 +6,15 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import theme from './theme/theme.js'
 import Test from './components/Test.jsx'
 import MainLayout from './layouts/main-layout/index.jsx'
+import { RouterProvider } from 'react-router-dom'
+import routes from './routes/routes.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <MainLayout>
-        <Test />
-      </MainLayout>
+      <RouterProvider router={routes} />
     </ThemeProvider>
   </StrictMode>,
 )

@@ -1,9 +1,9 @@
 import { Stack } from '@mui/material'
 import React from 'react'
 
-const CenteredStack = ({ children }) => {
+const CenteredStack = ({ children, ...props }) => {
    return (
-      <Stack direction="row" alignItems="start" spacing={1} mb={2}>
+      <Stack {...props} direction="row" alignItems="start" spacing={1}>
          {children}
       </Stack>
    )

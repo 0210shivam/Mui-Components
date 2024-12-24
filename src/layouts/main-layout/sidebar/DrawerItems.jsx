@@ -1,18 +1,10 @@
-import { ButtonBase, Link, List, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material'
+import { ButtonBase, Link, List, Stack } from '@mui/material'
 import Image from '../../../components/global/Image'
 import MagicQrLogo from '../../../assets/images/brand/magicqr-logo.png'
-import { ContactMail, Home, Info } from '@mui/icons-material';
+import sitemap from '../../../routes/sitemap';
+import SideBarItems from './SideBarItems';
 
 const DrawerItems = () => {
-   const drawerItems = [
-      { text: 'Dashboard', icon: <Home />, link: '/' },
-      { text: 'About', icon: <Info />, link: '/about' },
-      { text: 'Contact', icon: <ContactMail />, link: '/contact' },
-      { text: 'Home', icon: <Home />, link: '/' },
-      { text: 'About', icon: <Info />, link: '/about' },
-      { text: 'Contact', icon: <ContactMail />, link: '/contact' },
-   ];
-
    return (
       <>
          <Stack
@@ -30,23 +22,8 @@ const DrawerItems = () => {
             </ButtonBase>
          </Stack>
          <List sx={{ mt: 3, mb: 10, p: 0, pl: 3 }}>
-            {drawerItems.map((item, index) => (
-               <ListItemButton
-                  key={item.text}
-               >
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText
-                     primary={item.text}
-                     sx={{
-                        '& .MuiListItemText-primary': {
-                           // color: active ? 'primary.main' : null,
-                           // fontWeight: active ? 600 : 500,
-                           // color: 'blue',
-                           fontWeight: 600
-                        },
-                     }}
-                  />
-               </ListItemButton>
+            {sitemap.map((route) => (
+               <SideBarItems key={route.id} {...route} />
             ))}
          </List>
       </>

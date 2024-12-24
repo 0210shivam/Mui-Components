@@ -7,11 +7,11 @@ import ReviewActions from './ReviewActions'
 
 const ReviewList = ({ reviewData }) => {
    return (
-      <List sx={{ paddingX: 4, paddingY: 0, width: '100%' }}>
+      <List sx={{ paddingX: { xs: 1, lg: 4 }, paddingY: 0, width: '100%' }}>
          <ListItem sx={{ padding: 0 }}>
             <Card sx={{ width: 1, padding: 2 }}>
-               <Stack width={1} direction="row" spacing={2} alignItems="flex-start">
-                  <Stack width={0.4} direction="row" spacing={2} alignItems="flex-start" sx={{ overflow: 'clip' }}>
+               <Stack width={1} direction={{ xs: 'column', lg: 'row' }} spacing={2} alignItems="flex-start">
+                  <Stack width={{ xs: 1, lg: 0.4 }} direction="row" spacing={2} alignItems="flex-start" sx={{ overflow: 'clip' }}>
                      <ReviewAvatar avatar={AvtImg} />
                      <Stack>
                         <Typography sx={{ fontWeight: 'bold', fontSize: '24px' }}>Shivam Shrivastava</Typography>
@@ -21,7 +21,7 @@ const ReviewList = ({ reviewData }) => {
                         </Stack>
                      </Stack>
                   </Stack>
-                  <Stack width={0.6}>
+                  <Stack width={{ xs: 1, lg: 0.6 }}>
                      <Stack mb={0.5} mt={1} direction="row" alignItems="start" justifyContent="space-between">
                         <SoftRating />
                         <Typography sx={{ fontSize: '16px', fontWeight: 'bold' }} variant='subtitle'>24-December-2024</Typography>

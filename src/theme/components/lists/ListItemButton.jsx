@@ -1,18 +1,21 @@
 const ListItemButton = {
    styleOverrides: {
-      root: {
-         borderRadius: 6,
-         display: 'flex',
-         justifyContent: 'center',
-         minWidth: '100px',
-         // alignItems: 'start',
-         // backgroundColor: 'red',  // Set default background color to red
-         '&:hover': {
-            background: 'linear-gradient(140deg, rgb(16, 16, 16) 0%, rgb(167, 163, 163) 100%)',  // Change hover background color
-            color: 'white',  // Change text color to black on hover
-         }
-      },
-   }
-}
+      root: ({ theme }) => ({
+         color: theme.palette.text.disabled,
+         padding: theme.spacing(0.875, 1.25),
+         borderRadius: theme.shape.borderRadius * 1.25,
+         transition: 'all 0.3s ease', // Smooth transition for hover effect
+
+         // Glass effect for hover
+         '&.Mui-selected': {
+            background: 'rgba(136, 186, 255, 0.2)', // Semi-transparent white background
+            backdropFilter: 'blur(5px)', // Blur effect for the background
+            borderRadius: 10, // Maintain border radius
+            marginRight: 2,
+            boxShadow: `0 0px 2px 2px rgba(117, 127, 139, 0.1)`, // Optional: Add subtle shadow for depth
+         },
+      }),
+   },
+};
 
 export default ListItemButton;

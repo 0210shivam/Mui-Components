@@ -24,8 +24,9 @@ const TopBar = () => {
             direction="row"
             sx={{
                // border: '1px solid red',
-               paddingX: 3.8,
+               paddingX: { xs: 1, lg: 3.8 },
                paddingY: 2,
+               width: 1,
                position: 'sticky',
                top: 5,
                borderRadius: 2,
