@@ -7,8 +7,8 @@ const ListItemText = {
          fontWeight: 500,
          // Change styles when the parent ListItemButton is selected
          ".MuiListItemButton-root.Mui-selected &": {
-            color: theme.palette.text.secondary, // New color when selected
-            fontWeight: 600, // Bolder font weight
+            color: 'blue', // New color when selected
+            fontWeight: 700, // Bolder font weight
          },
       }),
    },

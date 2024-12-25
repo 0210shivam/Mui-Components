@@ -8,8 +8,8 @@ import sitemap from "../../../routes/sitemap"
 const PageContainer = () => {
    const path = useLocation().pathname;
    const page = sitemap.find((item) => item.path === path);
-   const pageTitle = page.title ?? "Page not found";
-   const pageSubtitle = page.subtitle ?? "This page does not exist";
+   const pageTitle = page?.title ?? "Page not found";
+   const pageSubtitle = page?.subtitle ?? "This page does not exist";
 
    return (
       <Stack sx={{ paddingX: { xs: 1, lg: 3.8 } }}>

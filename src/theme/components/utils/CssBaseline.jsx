@@ -13,7 +13,8 @@ const CssBaseline = {
       },
       body: {
          fontVariantLigatures: 'none',
-         background: `url(${BgImage}) no-repeat center center fixed`,
+         background: 'linear-gradient(140deg, rgba(238, 154, 247, 0.14) 0%, rgba(246, 115, 115, 0.01) 100%)',
+         // background: `url(${BgImage}) no-repeat center center fixed`,
          ...scrollbar(theme),
       },
    }),

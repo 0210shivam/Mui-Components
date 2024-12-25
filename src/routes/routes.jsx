@@ -3,7 +3,7 @@ import App from "../App";
 import Test from "../components/Test";
 import { lazy, Suspense } from "react";
 import Progress from "../components/global/Progress";
-import { mainPaths, rootPaths } from "./path";
+import { authPaths, mainPaths, rootPaths } from "./path";
 import Dashboard from "../pages/Dashboard";
 
 const MainLayout = lazy(() => import('../layouts/main-layout'));
@@ -14,6 +14,10 @@ const LeadAutomation = lazy(() => import('../pages/lead-automation'));
 const Customize = lazy(() => import('../pages/customize'));
 const Business = lazy(() => import('../pages/business'));
 const Plans = lazy(() => import('../pages/plans'));
+
+const SignIn = lazy(() => import('../pages/signin'));
+const SignUp = lazy(() => import('../pages/signup'));
+const AuthLayout = lazy(() => import('../layouts/auth-layout'));
 
 const routes = createBrowserRouter([{
    element: (
@@ -70,6 +74,26 @@ const routes = createBrowserRouter([{
                element: <Plans />
             }
          ],
+      },
+      {
+         path: rootPaths.root,
+         element: (
+            <AuthLayout>
+               <Suspense fallback={<div>Loading...</div>}>
+                  <Outlet />
+               </Suspense>
+            </AuthLayout>
+         ),
+         children: [
+            {
+               path: authPaths.signin,
+               element: <SignIn />
+            },
+            {
+               path: authPaths.signup,
+               element: <SignUp />
+            },
+         ]
       },
       {
          path: '*',

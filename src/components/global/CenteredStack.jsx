@@ -3,7 +3,7 @@ import React from 'react'
 
 const CenteredStack = ({ children, ...props }) => {
    return (
-      <Stack {...props} direction="row" alignItems="start" spacing={1}>
+      <Stack {...props} direction="row" spacing={1}>
          {children}
       </Stack>
    )

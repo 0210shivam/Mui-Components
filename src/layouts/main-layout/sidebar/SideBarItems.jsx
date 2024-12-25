@@ -10,14 +10,14 @@ const SideBarItems = ({ title, icon, path }) => {
 
    return (
       <div>
-         <ListItemButton onClick={() => router.push(path)} selected={active} sx={{ padding: 0.6 }}>
+         <ListItemButton onClick={() => router.push(path)} selected={active} sx={{ paddingY: 0.6, paddingX: 1 }}>
             <ListItemIcon>
                {icon && (
                   <IconifyIcon
                      icon={icon}
                      fontSize="h5.fontSize"
                      sx={{
-                        color: active ? 'primary.main' : null,
+                        color: active ? 'blue' : null,
                      }}
                   />
                )}
@@ -26,7 +26,7 @@ const SideBarItems = ({ title, icon, path }) => {
                primary={title}
                sx={{
                   '& .MuiListItemText-primary': {
-                     color: active ? 'primary.main' : null,
+                     color: active ? 'blue' : null,
                      fontWeight: active ? 600 : 500,
                      // color: 'blue',
                      // fontWeight: 600

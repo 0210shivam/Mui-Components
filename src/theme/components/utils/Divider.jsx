@@ -1,24 +1,24 @@
 const Divider = {
    styleOverrides: {
       root: ({ theme }) => ({
-         height: 2,
+         height: 1,
          alignItems: 'center',
-         backgroundColor: 'transparent',
+         backgroundColor: 'gray',
          borderColor: 'gray',
 
-         '&.MuiDivider-withChildren': {
-            height: '0 !important',
-            color: theme.palette.text.disabled,
-            backgroundColor: 'transparent',
-            fontWeight: 500,
+         // '&.MuiDivider-withChildren': {
+         //    height: '0 !important',
+         //    color: theme.palette.text.disabled,
+         //    backgroundColor: 'gray',
+         //    fontWeight: 500,
 
-            '&::before': {
-               backgroundColor: 'gray',
-            },
-            '&::after': {
-               backgroundColor: 'gray',
-            },
-         },
+         //    '&::before': {
+         //       backgroundColor: 'gray',
+         //    },
+         //    '&::after': {
+         //       backgroundColor: 'gray',
+         //    },
+         // },
       }),
    },
 };

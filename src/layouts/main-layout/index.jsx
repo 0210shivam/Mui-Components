@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material"
+import { Box, Stack } from "@mui/material"
 import SideBar from "./sidebar"
 import TopBar from "./topbar"
 import Footer from "./footer"
@@ -10,9 +10,11 @@ const MainLayout = ({ children }) => {
          <SideBar />
          <Stack px={1} width={{ xs: 1, lg: 'calc(100% - 290px)' }}>
             <TopBar />
-            <Stack mt={2} height={1} spacing={3}>
+            <Stack width={1} mt={2} height={1} spacing={3}>
                <PageContainer />
-               {children}
+               <Box paddingX={{ xs: 1, lg: 4 }}>
+                  {children}
+               </Box>
             </Stack>
          </Stack>
       </Stack>
